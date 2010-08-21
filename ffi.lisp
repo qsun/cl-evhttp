@@ -64,7 +64,7 @@
   (evb :pointer)
   (text :string))
 (setq *evbuffer* (evbuffer-new))
-(evbuffer-add-printf *evbuffer* "test")
+;; (evbuffer-add-printf *evbuffer* "Hello Clojure")
 
 (defcfun ("evhttp_send_reply" evhttp-send-reply)
     :void
@@ -77,7 +77,19 @@
     :void
     ((req :pointer)
      (arg :pointer))
-  (evhttp-send-reply req 200 "everything" *evbuffer*))
+  ;; (evhttp-request-own req)
+    ;; (invoke-debugger)
+  (evhttp-send-reply *req* 200 "everything" *evbuffer*))
+
+(defcfun ("evhttp_request_free" evhttp-request-free)
+    :void
+  (req :pointer))
+
+;; (evhttp-request-free *req*)
+
+(defcfun ("evhttp_request_own" evhttp-request-own)
+    :void
+  (req :pointer))
 
 (defcfun ("evhttp_set_gencb" evhttp-set-gencb)
     :void

@@ -1,5 +1,8 @@
+(require :asdf)
+(require :cffi)
+
 (defpackage lisp-libevent
-  (:use :common-lisp :asdf))
+  (:use :common-lisp :asdf :cffi))
 
 (in-package lisp-libevent)
 
@@ -8,6 +11,5 @@
   :license "LLGPL"
   :depends-on (:cffi)
   :components
-  ((:file "packages"
-          "ffi"
-          )))
+  ((:file "packages")
+   (:file "ffi")))
