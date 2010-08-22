@@ -1,4 +1,4 @@
-(in-package lisp-libevent)
+(in-package cl-evhttp)
 
 (define-foreign-library libevent
   (:unix (:or "libevent.so.4" "libevent.so"))
@@ -63,7 +63,7 @@
     :void
   (evb :pointer)
   (text :string))
-(setq *evbuffer* (evbuffer-new))
+;; (setq *evbuffer* (evbuffer-new))
 ;; (evbuffer-add-printf *evbuffer* "Hello Clojure")
 
 (defcfun ("evhttp_send_reply" evhttp-send-reply)

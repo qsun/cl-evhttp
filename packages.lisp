@@ -1,6 +1,6 @@
 (in-package :cl-user)
 
-(defpackage :lisp-libevent
+(defpackage :cl-evhttp
   (:use :cl :cl-user :cffi)
   (:export
    :event

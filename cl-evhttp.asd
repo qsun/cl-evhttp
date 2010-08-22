@@ -1,12 +1,12 @@
 (require :asdf)
 (require :cffi)
 
-(defpackage lisp-libevent
+(defpackage cl-evhttp
   (:use :common-lisp :asdf :cffi))
 
-(in-package lisp-libevent)
+(in-package cl-evhttp)
 
-(defsystem lisp-libevent
+(defsystem cl-evhttp
   :version "0.0.1"
   :license "LLGPL"
   :depends-on (:cffi)
